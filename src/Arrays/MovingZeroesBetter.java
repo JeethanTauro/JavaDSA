@@ -2,6 +2,7 @@ package Arrays;
 
 import java.util.Arrays;
 
+//leetcode 283
 public class MovingZeroesBetter {
     public static void moveZeroes(int[] arr){
         int index = 0; // to place the next non-zero number
