@@ -10,12 +10,11 @@ public class MovingZeroesBetter {
             if(arr[i] != 0){
                 arr[index++] = arr[i];
             }
-
         }
+        //filling the zeroes
         while(index < arr.length){
             arr[index++] = 0;
         }
-        //
     }
     public static void main(String[] args) {
         int[] arr = {0,20,1,2,0,0,0,2,2,3,0,3};
