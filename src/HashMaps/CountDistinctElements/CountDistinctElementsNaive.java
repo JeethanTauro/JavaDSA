@@ -1,3 +1,4 @@
+package HashMaps.CountDistinctElements;
 class CountDistinctElementsNaive {
   public static int count(int[] arr){
     int length = arr.length;
