@@ -1,25 +1,37 @@
 package Strings.ReverseWords;
 
+import java.util.Stack;
+
 public class Naive {
-    public static void reverse(String str){
-        StringBuilder answer = new StringBuilder();
-        str = str.trim(); // removes the starting and ending spaces
-        int len = str.length();
-        int sub_start = len-1;
-        int sub_end = len-1;
-        for(int i = len-1 ; i>=0 ; i--){
+    public static String reverse(String str){
+        Stack<StringBuilder> stack = new Stack<>();
+        StringBuilder s = new StringBuilder();
+        for(int i=0;i<str.length();i++){
             if(str.charAt(i) != ' '){
-                sub_start--;
+                s.append(str.charAt(i));  //append the characters to the s
             }
-            else {
-                answer.append(str.substring(sub_start,sub_end));
-                sub_start = len-answer.length()-1;
-                sub_end = len-answer.length()-1;
+
+            else{ //if you see a ' ', push the s to the stack and then empty the s
+                stack.push(new StringBuilder(s));
+                s.setLength(0); //reset the string;
             }
         }
-
+        // push last word
+        if(s.length() > 0){
+            stack.push(new StringBuilder(s));
+        }
+        StringBuilder result = new StringBuilder();
+        while(!stack.isEmpty()){
+            result.append(stack.pop());
+            if(!stack.isEmpty()){ // add spaces between words
+                result.append(" ");
+            }
+        }
+        str = result.toString();
+        return str;
     }
     public static void main(String[] args) {
-
+        String str = "hello world";
+        System.out.println(reverse(str));
     }
 }
