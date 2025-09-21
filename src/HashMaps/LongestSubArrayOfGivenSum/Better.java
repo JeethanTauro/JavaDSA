@@ -11,7 +11,7 @@ public class Better {
             int len = 0;
             prefix = prefix + arr[i];
             map.putIfAbsent(prefix,i);
-            if(prefix == target){
+            if(prefix == target){//calculated till now, so basically i+1;
                 max_len = i + 1;
             }
             if(map.containsKey(prefix-target)){

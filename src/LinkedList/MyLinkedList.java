@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 
 public class MyLinkedList {
-     class Node{
+     public class Node{
         int data;
         Node next; //the 'next' is a reference variable is storing the address of a node object
         Node(int data){
@@ -17,7 +17,7 @@ public class MyLinkedList {
     private Node start=null;
 
     //add node at end
-    private void addNode(int data){
+    public void addNode(int data){
         Node newNode = new Node(data);
         //curr and start point at the same node now
         if(start == null){
@@ -70,7 +70,7 @@ public class MyLinkedList {
 
 
     //search node and return its index
-    private int find(int data){
+    public int find(int data){
         Node curr = start;
         int count = 0;
         while(curr != null){
@@ -84,7 +84,7 @@ public class MyLinkedList {
     }
 
     //delete node at end
-    private void deleteEnd(){
+    public void deleteEnd(){
         if(start == null){
             System.out.println("No nodes");
             return;
@@ -98,7 +98,7 @@ public class MyLinkedList {
         prev.next = null;
     }
     //delete node at beginning
-    private void deleteFirst(){
+    public void deleteFirst(){
         if(start == null){
             System.out.println("No nodes");
             return;
@@ -108,7 +108,7 @@ public class MyLinkedList {
     }
 
     //delete node in at given index
-    private void deleteAt(int index){
+    public void deleteAt(int index){
         if(start == null){
             System.out.println("No nodes");
             return;
@@ -129,7 +129,7 @@ public class MyLinkedList {
     }
 
     //display
-    private void print(){
+    public void print(){
          if(start == null){
              System.out.println("Nothing to display");
              return;
@@ -143,20 +143,6 @@ public class MyLinkedList {
     }
 
     public static void main(String[] args) {
-        MyLinkedList ll = new MyLinkedList();
-        LinkedList<String> list = new LinkedList<>(); //this is inbuilt linked list
-        ll.addNode(5);
-        ll.addNode(10);
-        ll.addNode(15);
-        ll.addNode(20);
-        ll.addNode(25);
-        ll.print();
-        ll.deleteAt(2);
-        ll.print();
 
-        list.add("Hi");
-        list.addLast("world");
-        list.addFirst("HELOO");
-        System.out.println(list);
     }
 }
